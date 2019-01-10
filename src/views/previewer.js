@@ -1,9 +1,10 @@
 const p = require('puddles')
 
-const prevent = require('../lib/prevent')
+const Previewer = (actions, state) => {
+  const { image: { inputNext, submitForm } } = actions
+  const { image: { error, next } } = state
 
-const Previewer = (actions, state) =>
-  p('div.previewer', [
+  return p('div.previewer', [
     p('div.content', [
       p('h1.title', 'Image previewer'),
 
@@ -12,22 +13,27 @@ const Previewer = (actions, state) =>
         p('img.preview')
       ]),
 
-      p('div.instructions', [
-        'To preview your image, either drag-n-drop a local file into the space above,',
-        p('br'),
-        'or paste the image url into the input below.'
-      ]),
-
       p('form.form', {
-        on: { submit: prevent }
+        on: { submit: submitForm }
       }, [
-        p('input.input.url'),
+        p('input.input.url', {
+          attrs: {
+            placeholder: 'Paste image url (ex: http://example.com/image.jpg)'
+          },
+          class: { error },
+          on: { input: inputNext },
+          props: { value: next }
+        }),
 
         p('button.btn.submit', {
-          attrs: { type: 'submit' }
+          attrs: {
+            disabled: !next || error,
+            type: 'submit'
+          }
         }, 'Preview')
       ])
     ])
   ])
+}
 
 module.exports = Previewer

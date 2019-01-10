@@ -3697,6 +3697,11 @@ readdirp@^2.0.0:
     micromatch "^3.1.10"
     readable-stream "^2.0.2"
 
+redux-functor@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/redux-functor/-/redux-functor-1.0.0.tgz#482ec613670b8357b749467cbc7f75269fbd6418"
+  integrity sha512-v3Mfop3+jOSOzPHBXsBepABjfHcrrxHUlhhlaGG7K+kSGKIUcVOhcOFbnDOywA+/1O0TB5aLz2ahdjE2QbBqdA==
+
 regenerate-unicode-properties@^7.0.0:
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/regenerate-unicode-properties/-/regenerate-unicode-properties-7.0.0.tgz#107405afcc4a190ec5ed450ecaa00ed0cafa7a4c"

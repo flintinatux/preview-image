@@ -5,6 +5,11 @@
   cursor: pointer;
   outline: none;
   text-transform: uppercase;
+
+  &[disabled] {
+    opacity: 0.6;
+    pointer-events: none;
+  }
 }
 
 .input {
@@ -12,4 +17,8 @@
   border-radius: .4rem;
   padding: 1rem 1.2rem;
   outline: none;
+
+  &.error {
+    border-color: @red;
+  }
 }

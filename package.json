@@ -27,6 +27,7 @@
   "dependencies": {
     "normalize.css": "^8.0.1",
     "puddles": "^2.1.8",
+    "redux-functor": "^1.0.0",
     "tinyfunk": "^1.7.0"
   },
   "devDependencies": {
