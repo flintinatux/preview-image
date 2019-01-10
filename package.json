@@ -1,0 +1,48 @@
+{
+  "name": "preview-image",
+  "version": "1.0.0",
+  "description": "In-browser image previewer",
+  "main": "src/index.js",
+  "author": "flintinatux",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "build": "run-p build:*",
+    "build:pages": "pug -o docs src/*.pug",
+    "build:scripts": "browserify src/index.js | buble | uglifyjs -cm > docs/index.js",
+    "build:styles": "lessc src/index.less | postcss -u autoprefixer | cleancss -O2 --inline all > docs/index.css",
+    "clean": "rm -rf docs && mkdir docs",
+    "lint": "eslint src",
+    "prebuild": "yarn run clean",
+    "prestart": "yarn run build",
+    "prewatch": "yarn run clean",
+    "prewatch:pages": "yarn run build:pages",
+    "prewatch:styles": "yarn run build:styles",
+    "watch": "run-p watch:*",
+    "watch:pages": "chokidar 'src/*.pug' -c 'yarn run build:pages' --silent",
+    "watch:scripts": "watchify src/index.js -dv -o 'exorcist docs/index.js.map > docs/index.js'",
+    "watch:serve": "http-server docs -c-1 -p 3000 -s",
+    "watch:styles": "chokidar 'src/index.less' 'src/styles/*.less' -c 'yarn run build:styles' --silent"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1",
+    "puddles": "^2.1.8",
+    "tinyfunk": "^1.7.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.4.4",
+    "browserify": "^16.2.3",
+    "buble": "^0.19.6",
+    "chokidar-cli": "^1.2.1",
+    "clean-css-cli": "^4.2.1",
+    "eslint": "^5.12.0",
+    "exorcist": "^1.0.1",
+    "http-server": "^0.11.1",
+    "less": "^3.9.0",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^6.1.1",
+    "pug-cli": "^1.0.0-alpha6",
+    "uglify-js": "^3.4.9",
+    "watchify": "^3.11.0"
+  }
+}

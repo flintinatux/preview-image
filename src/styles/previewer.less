@@ -1,0 +1,57 @@
+.previewer {
+  .position(fixed; 0; 0; 0; 0);
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+
+  .aspect-ratio {
+    padding-top: 75%;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 80rem;
+    width: 100%;
+  }
+
+  .form {
+    display: flex;
+    width: 100%;
+  }
+
+  .instructions {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+
+  .placeholder {
+    background-color: @gray-95;
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+
+  .submit {
+    background: @blue;
+    color: @white;
+    flex-shrink: 0;
+    margin-left: 2rem;
+    width: 20rem;
+
+    .hover({
+      background: @blue-dark;
+    });
+  }
+
+  .title {
+    font-weight: 300;
+    margin: 0 0 2rem;
+    text-transform: uppercase;
+  }
+
+  .url {
+    flex-grow: 2;
+  }
+}
