@@ -1,5 +1,7 @@
 const p = require('puddles')
 
+const icon = 'https://user-images.githubusercontent.com/888052/51040338-35dcb080-1585-11e9-9fa2-1767ddc68612.png'
+
 const Previewer = (actions, state) => {
   const { image: { inputNext, submitForm } } = actions
   const { image: { current, error, next } } = state
@@ -12,9 +14,9 @@ const Previewer = (actions, state) => {
         p('div.aspect-ratio'),
 
         p('div.container', [
-          p('img.preview', {
-            attrs: { src: current }
-          })
+          current
+            ? p('img.preview', { attrs: { src: current } })
+            : p('img.placeholder', { attrs: { src: icon } })
         ])
       ]),
 
