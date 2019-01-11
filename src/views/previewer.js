@@ -8,12 +8,7 @@ const Previewer = (actions, state) => {
     p('div.content', [
       p('h1.title', 'Image previewer'),
 
-      p('div.dropbox', {
-        // style: {
-        //   backgroundImage: current && `url(${current})`,
-        //   backgroundSize: 'contain'
-        // }
-      },[
+      p('div.dropbox', [
         p('div.aspect-ratio'),
 
         p('div.container', [
