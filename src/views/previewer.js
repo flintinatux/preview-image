@@ -2,15 +2,25 @@ const p = require('puddles')
 
 const Previewer = (actions, state) => {
   const { image: { inputNext, submitForm } } = actions
-  const { image: { error, next } } = state
+  const { image: { current, error, next } } = state
 
   return p('div.previewer', [
     p('div.content', [
       p('h1.title', 'Image previewer'),
 
-      p('div.placeholder', [
+      p('div.dropbox', {
+        // style: {
+        //   backgroundImage: current && `url(${current})`,
+        //   backgroundSize: 'contain'
+        // }
+      },[
         p('div.aspect-ratio'),
-        p('img.preview')
+
+        p('div.container', [
+          p('img.preview', {
+            attrs: { src: current }
+          })
+        ])
       ]),
 
       p('form.form', {

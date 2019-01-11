@@ -9,6 +9,13 @@
     padding-top: 75%;
   }
 
+  .container {
+    .position(absolute; 0; 0; 0; 0);
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
   .content {
     display: flex;
     flex-direction: column;
@@ -17,16 +24,27 @@
     width: 100%;
   }
 
+  .dropbox {
+    background-color: @gray-95;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: .3rem dashed @gray-80;
+    border-radius: .4rem;
+    margin-bottom: 2rem;
+    position: relative;
+    width: 100%;
+  }
+
   .form {
     display: flex;
+    flex-shrink: 0;
     margin-bottom: 2rem;
     width: 100%;
   }
 
-  .placeholder {
-    background-color: @gray-95;
-    margin-bottom: 2rem;
-    width: 100%;
+  .preview {
+    max-height: 100%;
+    max-width: 100%;
   }
 
   .submit {
