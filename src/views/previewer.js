@@ -34,7 +34,7 @@ const Previewer = (actions, state) => {
       }, [
         p('input.input.url', {
           attrs: {
-            placeholder: 'Paste image url (ex: http://example.com/image.jpg)'
+            placeholder: 'Paste image url and press enter'
           },
           class: { error },
           on: { input: inputNext },
