@@ -25,6 +25,7 @@
     "watch:styles": "chokidar 'src/index.less' 'src/styles/*.less' -c 'yarn run build:styles' --silent"
   },
   "dependencies": {
+    "drag-drop": "^4.2.0",
     "normalize.css": "^8.0.1",
     "puddles": "^2.1.8",
     "redux-functor": "^1.0.0",

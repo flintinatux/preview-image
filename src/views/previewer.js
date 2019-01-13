@@ -3,14 +3,23 @@ const p = require('puddles')
 const icon = 'https://user-images.githubusercontent.com/888052/51040338-35dcb080-1585-11e9-9fa2-1767ddc68612.png'
 
 const Previewer = (actions, state) => {
-  const { image: { inputNext, submitForm } } = actions
+  const {
+    image: {
+      attachDragDrop,
+      inputNext,
+      submitForm
+    }
+  } = actions
+
   const { image: { current, error, next } } = state
 
   return p('div.previewer', [
     p('div.content', [
       p('h1.title', 'Image previewer'),
 
-      p('div.dropbox', [
+      p('div.dropbox', {
+        hook: { insert: attachDragDrop }
+      }, [
         p('div.aspect-ratio'),
 
         p('div.container', [
